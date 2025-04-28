@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>📦 Order Viewer</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h2>📄 แสดงข้อมูลคำสั่งซื้อ</h2>
+
+  <label for="contractSelector">🔗 เลือก Smart Contract:</label>
+  <select id="contractSelector">
+  </select>
+
+  <div id="status">⏳ กำลังโหลด...</div>
+  <ul id="orderList"></ul>
+
+  <script src="scripts/dashboard.js"></script>
+</body>
+
+</html>

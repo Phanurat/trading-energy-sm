@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>📦 เพิ่มข้อมูล Order หลายรายการ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <h2>📋 กรอกข้อมูล Order หลายรายการ</h2>
+
+    <label for="contractSelector">🔗 เลือก Smart Contract:</label>
+    <select id="contractSelector" onchange="onContractChange()">
+        <option>⏳ กำลังโหลด...</option>
+    </select>
+    <button onclick="submitCreateContract()">🔨 สร้าง Contract ใหม่</button>
+    <a href="dashboard.html">Dashboard</a>
+
+    <p>📝 รูปแบบ:
+    <pre>
+[
+  ["0xA1", "22/04/2025", "Solar", "Completed", "1500.75", "3.00", "4500.25"],
+  ["0xA2", "23/04/2025", "Wind", "Pending", "1200.50", "4.50", "5402.25"]
+]
+  </pre>
+    </p>
+    <textarea id="bulkInput" placeholder='วาง JSON array ที่นี่...'></textarea>
+    <br>
+    <button onclick="submitOrders()">📤 ส่งข้อมูลทั้งหมด</button>
+
+    <div id="status"></div>
+    <div id="contractAddress" style="margin-top: 1rem; color: #333;"></div>
+
+    <script src="scripts/index.js"></script>
+
+</body>
+
+</html>
