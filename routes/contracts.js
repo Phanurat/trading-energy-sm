@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 
 const db = mysql.createConnection({
   host: 'sm-web3-energy_db',
-  user: 'root',
+  user: 'admin',
   password: '1111',
   database: 'database_contracts'
 });
