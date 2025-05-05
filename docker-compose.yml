@@ -51,6 +51,7 @@ services:
 
 networks:
   webnet:
+    driver: bridge
 
 volumes:
   db_data:

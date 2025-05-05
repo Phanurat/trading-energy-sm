@@ -2,11 +2,13 @@ const express = require('express');
 const router = express.Router();
 const mysql = require('mysql2');
 
+// เชื่อมต่อกับฐานข้อมูล MySQL
 const db = mysql.createConnection({
-  host: 'sm-web3-energy_db',
+  host: 'db', // ใช้ชื่อ service ของ MySQL
   user: 'admin',
   password: '1111',
-  database: 'database_contracts'
+  database: 'database_contracts',
+  port: 3306
 });
 
 db.connect((err) => {
@@ -17,6 +19,7 @@ db.connect((err) => {
   }
 });
 
+// ดึงข้อมูล contracts ทั้งหมด
 router.get('/contracts', (req, res) => {
   db.query('SELECT * FROM contracts ORDER BY id DESC', (err, results) => {
     if (err) return res.status(500).json({ error: err });
@@ -24,7 +27,7 @@ router.get('/contracts', (req, res) => {
   });
 });
 
-
+// เพิ่มข้อมูล contract ใหม่
 router.post('/contracts', (req, res) => {
   const { id_contracts } = req.body;
 
